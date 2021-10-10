@@ -1,0 +1,19 @@
+type Query {
+  info: String!
+  feed: [MenuItem!]!
+  #Fetch a single link by its `id`
+  menuItem(id: ID!): MenuItem
+}
+
+type Mutation {
+  createMenuItem(name: String!, description: String, price: Int!): MenuItem!
+  updateMenuItem(id: ID!, name: String, description: String, price: Int): MenuItem
+  deleteMenuItem(id: ID!): MenuItem
+}
+
+type MenuItem {
+  id: ID!
+  name: String!
+  description: String
+  price: Int!
+}
